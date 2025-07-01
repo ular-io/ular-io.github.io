@@ -1,0 +1,67 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ular.io</title>
+    <!-- Vuetify CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@3.5.14/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body,
+      #app {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <v-app>
+        <v-main>
+          <v-container
+            class="fill-height d-flex flex-column justify-center align-center text-center"
+          >
+            <v-avatar size="80" class="mb-4">
+              <v-img src="https://via.placeholder.com/80" alt="로고" />
+            </v-avatar>
+            <h1 class="text-h4 font-weight-bold mb-2">Ular.io</h1>
+            <p class="text-body-1 mb-6">
+              ular.io is dedicated to delivering innovative software solutions
+              that empower businesses and individuals. Our team values
+              creativity, reliability, and user-centric design to ensure the
+              best digital experiences.
+            </p>
+          </v-container>
+        </v-main>
+      </v-app>
+    </div>
+
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <!-- Vuetify 3 -->
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.5.14/dist/vuetify.min.js"></script>
+    <!-- Vuetify 구성 요소 -->
+    <script>
+      const { createApp } = Vue;
+      const { createVuetify } = Vuetify;
+
+      const app = createApp({});
+      const vuetify = createVuetify();
+
+      app.use(vuetify);
+      app.mount("#app");
+    </script>
+  </body>
+</html>
