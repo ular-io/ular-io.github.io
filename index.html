@@ -5,15 +5,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ular.io</title>
-    <!-- Vuetify CSS -->
+    <title>UlarBox - Transform Your Files into Smart Database</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/vuetify@3.5.14/dist/vuetify.min.css"
+      href="https://cdn.jsdelivr.net/npm/vuetify@3.8.12/dist/vuetify.min.css"
       rel="stylesheet"
     />
-    <!-- Material Design Icons -->
     <link
-      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -23,42 +27,751 @@
         margin: 0;
         padding: 0;
         height: 100%;
+        font-family: "Inter", sans-serif;
+      }
+      .hero-title {
+        font-family: "Space Grotesk", sans-serif;
+      }
+      .section-spacing {
+        padding: 80px 0;
+      }
+      .hero-section {
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        color: white;
+        min-height: 100vh;
+      }
+      .feature-highlight {
+        background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        border-radius: 16px;
+        padding: 2rem;
+        height: 100%;
+      }
+      .demo-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
       }
     </style>
   </head>
   <body>
     <div id="app">
       <v-app>
-        <v-main>
-          <v-container
-            class="fill-height d-flex flex-column justify-center align-center text-center"
-          >
-            <v-avatar size="80" class="mb-4">
-              <v-img src="https://via.placeholder.com/80" alt="로고" />
+        <!-- Navigation Bar -->
+        <v-app-bar elevation="0" color="white" class="px-4">
+          <v-app-bar-title class="d-flex align-center">
+            <v-avatar size="40" class="mr-3">
+              <v-img
+                src="https://via.placeholder.com/40/4f46e5/ffffff?text=U"
+                alt="UlarBox Logo"
+              />
             </v-avatar>
-            <h1 class="text-h4 font-weight-bold mb-2">Ulario Soft</h1>
-            <p class="text-body-1 mb-6">
-              Ulario Soft is dedicated to delivering innovative software
-              solutions that empower businesses and individuals. Our team values
-              creativity, reliability, and user-centric design to ensure the
-              best digital experiences.
-            </p>
-          </v-container>
+            <span class="hero-title font-weight-bold">UlarBox</span>
+          </v-app-bar-title>
+
+          <v-spacer></v-spacer>
+
+          <v-btn
+            v-for="item in navItems"
+            :key="item.title"
+            :prepend-icon="item.icon"
+            variant="text"
+            class="d-none d-md-flex mr-2"
+          >
+            {{ item.title }}
+          </v-btn>
+
+          <v-btn
+            color="primary"
+            variant="elevated"
+            prepend-icon="mdi-download"
+            class="d-none d-sm-flex"
+          >
+            Download
+          </v-btn>
+
+          <v-app-bar-nav-icon class="d-md-none"></v-app-bar-nav-icon>
+        </v-app-bar>
+
+        <v-main>
+          <!-- Hero Section -->
+          <section class="hero-section d-flex align-center">
+            <v-container>
+              <v-row justify="center" align="center" class="text-center">
+                <v-col cols="12" md="8">
+                  <v-fade-transition appear>
+                    <div>
+                      <div class="mb-6">
+                        <v-img
+                          src="https://via.placeholder.com/200x120/ffffff/4f46e5?text=UlarBox"
+                          alt="UlarBox Logo"
+                          max-width="200"
+                          class="mx-auto mb-4"
+                        ></v-img>
+                      </div>
+                      <h1
+                        class="hero-title text-h2 text-md-h1 font-weight-bold mb-6"
+                      >
+                        Turn Your Files Into<br />A Smart Database
+                      </h1>
+                      <p class="text-h6 text-md-h5 mb-8 opacity-90">
+                        UlarBox transforms scattered files on your PC into an
+                        organized, searchable database. View, edit, and manage
+                        all your images, PDFs, documents, and code files in one
+                        place.
+                      </p>
+                      <v-btn
+                        size="x-large"
+                        color="white"
+                        variant="elevated"
+                        prepend-icon="mdi-download"
+                        class="mr-4 mb-2"
+                      >
+                        Download Free
+                      </v-btn>
+                      <v-btn
+                        size="x-large"
+                        variant="outlined"
+                        color="white"
+                        prepend-icon="mdi-play-circle"
+                      >
+                        See Demo
+                      </v-btn>
+                    </div>
+                  </v-fade-transition>
+                </v-col>
+              </v-row>
+            </v-container>
+          </section>
+
+          <!-- Problem Solution Section -->
+          <section class="section-spacing">
+            <v-container>
+              <v-row align="center" class="mb-12">
+                <v-col cols="12" md="6">
+                  <h2 class="hero-title text-h3 font-weight-bold mb-6">
+                    Tired of Hunting for Files?
+                  </h2>
+                  <v-list class="bg-transparent">
+                    <v-list-item
+                      prepend-icon="mdi-close-circle"
+                      class="px-0 mb-2"
+                    >
+                      <v-list-item-title class="text-grey-darken-2">
+                        Files scattered across multiple folders
+                      </v-list-item-title>
+                    </v-list-item>
+                    <v-list-item
+                      prepend-icon="mdi-close-circle"
+                      class="px-0 mb-2"
+                    >
+                      <v-list-item-title class="text-grey-darken-2">
+                        Can't remember where you saved that important document
+                      </v-list-item-title>
+                    </v-list-item>
+                    <v-list-item
+                      prepend-icon="mdi-close-circle"
+                      class="px-0 mb-2"
+                    >
+                      <v-list-item-title class="text-grey-darken-2">
+                        No way to add custom tags or notes to files
+                      </v-list-item-title>
+                    </v-list-item>
+                    <v-list-item
+                      prepend-icon="mdi-close-circle"
+                      class="px-0 mb-2"
+                    >
+                      <v-list-item-title class="text-grey-darken-2">
+                        Slow file preview and content search
+                      </v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-col>
+                <v-col cols="12" md="6">
+                  <v-img
+                    src="https://via.placeholder.com/600x400/f3f4f6/6b7280?text=Messy+File+System"
+                    alt="Messy File System"
+                    class="rounded-lg"
+                  ></v-img>
+                </v-col>
+              </v-row>
+
+              <v-row align="center" class="mb-12">
+                <v-col cols="12" md="6" order="2" order-md="1">
+                  <v-img
+                    src="https://via.placeholder.com/600x400/f0f9ff/0ea5e9?text=UlarBox+Dashboard"
+                    alt="UlarBox Dashboard"
+                    class="rounded-lg demo-card"
+                  ></v-img>
+                </v-col>
+                <v-col cols="12" md="6" order="1" order-md="2">
+                  <h2
+                    class="hero-title text-h3 font-weight-bold mb-6 text-primary"
+                  >
+                    UlarBox Makes It Simple
+                  </h2>
+                  <v-list class="bg-transparent">
+                    <v-list-item
+                      prepend-icon="mdi-check-circle"
+                      class="px-0 mb-2"
+                    >
+                      <v-list-item-title class="font-weight-medium">
+                        <strong>All files in one view</strong> - Excel-like
+                        table interface
+                      </v-list-item-title>
+                    </v-list-item>
+                    <v-list-item
+                      prepend-icon="mdi-check-circle"
+                      class="px-0 mb-2"
+                    >
+                      <v-list-item-title class="font-weight-medium">
+                        <strong>Instant search</strong> - Find files by name,
+                        content, or custom tags
+                      </v-list-item-title>
+                    </v-list-item>
+                    <v-list-item
+                      prepend-icon="mdi-check-circle"
+                      class="px-0 mb-2"
+                    >
+                      <v-list-item-title class="font-weight-medium">
+                        <strong>Custom properties</strong> - Add your own tags,
+                        notes, and metadata
+                      </v-list-item-title>
+                    </v-list-item>
+                    <v-list-item
+                      prepend-icon="mdi-check-circle"
+                      class="px-0 mb-2"
+                    >
+                      <v-list-item-title class="font-weight-medium">
+                        <strong>Lightning fast</strong> - Local processing means
+                        instant results
+                      </v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-col>
+              </v-row>
+            </v-container>
+          </section>
+
+          <!-- Key Features Section -->
+          <section class="section-spacing bg-grey-lighten-5">
+            <v-container>
+              <div class="text-center mb-12">
+                <h2 class="hero-title text-h3 font-weight-bold mb-4">
+                  Everything You Need in One Place
+                </h2>
+                <p class="text-h6 text-grey-darken-1">
+                  Powerful file management reimagined for the modern user
+                </p>
+              </div>
+              <v-row>
+                <v-col
+                  cols="12"
+                  md="4"
+                  v-for="feature in keyFeatures"
+                  :key="feature.title"
+                >
+                  <div class="feature-highlight">
+                    <v-avatar size="80" :color="feature.color" class="mb-4">
+                      <v-icon size="40" color="white"
+                        >{{ feature.icon }}</v-icon
+                      >
+                    </v-avatar>
+                    <h4 class="text-h6 font-weight-bold mb-3">
+                      {{ feature.title }}
+                    </h4>
+                    <p class="text-body-2 mb-4">{{ feature.description }}</p>
+                    <v-chip
+                      v-for="tag in feature.tags"
+                      :key="tag"
+                      size="small"
+                      class="mr-1 mb-1"
+                      :color="feature.color"
+                      variant="outlined"
+                    >
+                      {{ tag }}
+                    </v-chip>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-container>
+          </section>
+
+          <!-- File Types Section -->
+          <section class="section-spacing">
+            <v-container>
+              <div class="text-center mb-12">
+                <h2 class="hero-title text-h3 font-weight-bold mb-4">
+                  Supports All Your File Types
+                </h2>
+                <p class="text-h6 text-grey-darken-1">
+                  One tool for all your digital content
+                </p>
+              </div>
+              <v-row>
+                <v-col
+                  cols="6"
+                  md="2"
+                  v-for="fileType in fileTypes"
+                  :key="fileType.name"
+                >
+                  <v-card class="text-center pa-4 h-100" elevation="2" hover>
+                    <v-avatar size="60" :color="fileType.color" class="mb-3">
+                      <v-icon size="30" color="white"
+                        >{{ fileType.icon }}</v-icon
+                      >
+                    </v-avatar>
+                    <h5 class="text-subtitle-1 font-weight-bold mb-2">
+                      {{ fileType.name }}
+                    </h5>
+                    <p class="text-caption text-grey-darken-1">
+                      {{ fileType.description }}
+                    </p>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-container>
+          </section>
+
+          <!-- Screenshots Section -->
+          <section class="section-spacing bg-grey-lighten-5">
+            <v-container>
+              <div class="text-center mb-12">
+                <h2 class="hero-title text-h3 font-weight-bold mb-4">
+                  See UlarBox in Action
+                </h2>
+                <p class="text-h6 text-grey-darken-1">
+                  Simple, powerful, and beautiful
+                </p>
+              </div>
+              <v-row>
+                <v-col
+                  cols="12"
+                  md="6"
+                  v-for="(screenshot, index) in screenshots"
+                  :key="index"
+                >
+                  <v-card elevation="8" class="mb-4">
+                    <v-img
+                      :src="screenshot.image"
+                      :alt="screenshot.title"
+                      height="300"
+                      cover
+                    ></v-img>
+                    <v-card-title class="text-center"
+                      >{{ screenshot.title }}</v-card-title
+                    >
+                    <v-card-text class="text-center">
+                      {{ screenshot.description }}
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-container>
+          </section>
+
+          <!-- Why Choose UlarBox Section -->
+          <section class="section-spacing bg-primary">
+            <v-container>
+              <div class="text-center mb-12">
+                <h2 class="hero-title text-h3 font-weight-bold mb-4 text-white">
+                  Why UlarBox?
+                </h2>
+                <p class="text-h6 text-white opacity-90">
+                  Built for power users who value efficiency
+                </p>
+              </div>
+              <v-row>
+                <v-col
+                  cols="12"
+                  md="3"
+                  v-for="benefit in benefits"
+                  :key="benefit.title"
+                >
+                  <v-card
+                    class="text-center pa-6 h-100 bg-white bg-opacity-10"
+                    elevation="0"
+                  >
+                    <v-icon size="50" color="white" class="mb-4"
+                      >{{ benefit.icon }}</v-icon
+                    >
+                    <h4 class="text-h6 font-weight-bold mb-3 text-white">
+                      {{ benefit.title }}
+                    </h4>
+                    <p class="text-white opacity-90">
+                      {{ benefit.description }}
+                    </p>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-container>
+          </section>
+
+          <!-- CTA Section -->
+          <section class="section-spacing text-center">
+            <v-container>
+              <v-row justify="center">
+                <v-col cols="12" md="8">
+                  <h2 class="hero-title text-h3 font-weight-bold mb-4">
+                    Ready to Organize Your Digital Life?
+                  </h2>
+                  <p class="text-h6 text-grey-darken-1 mb-8">
+                    Transform your chaotic file system into a powerful,
+                    searchable database in minutes
+                  </p>
+                  <v-btn
+                    size="x-large"
+                    color="primary"
+                    variant="elevated"
+                    prepend-icon="mdi-download"
+                    class="mr-4 mb-2"
+                  >
+                    Download UlarBox Free
+                  </v-btn>
+                  <v-btn
+                    size="x-large"
+                    variant="outlined"
+                    color="primary"
+                    prepend-icon="mdi-help-circle"
+                  >
+                    Learn More
+                  </v-btn>
+                  <div class="mt-6">
+                    <v-chip color="green" variant="tonal" class="mr-2">
+                      <v-icon start>mdi-check</v-icon>
+                      Free to use
+                    </v-chip>
+                    <v-chip color="blue" variant="tonal" class="mr-2">
+                      <v-icon start>mdi-shield-check</v-icon>
+                      100% Local
+                    </v-chip>
+                    <v-chip color="orange" variant="tonal">
+                      <v-icon start>mdi-lightning-bolt</v-icon>
+                      Instant Setup
+                    </v-chip>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-container>
+          </section>
+
+          <!-- About Company Section -->
+          <section class="section-spacing bg-grey-lighten-5">
+            <v-container>
+              <v-row justify="center" align="center">
+                <v-col cols="12" md="6">
+                  <v-img
+                    src="https://via.placeholder.com/500x400/f3f4f6/4f46e5?text=Innovation+Focus"
+                    alt="Innovation Focus"
+                    class="rounded-lg"
+                  ></v-img>
+                </v-col>
+                <v-col cols="12" md="6">
+                  <h2 class="hero-title text-h3 font-weight-bold mb-4">
+                    About Ulario Soft
+                  </h2>
+                  <p class="text-body-1 mb-4">
+                    We're passionate about solving real problems with elegant
+                    software. UlarBox was born from our own frustration with
+                    scattered files and inefficient file management systems.
+                  </p>
+                  <p class="text-body-1 mb-6">
+                    Our mission is simple: make your digital life more
+                    organized, searchable, and productive. We believe powerful
+                    tools should be intuitive and accessible to everyone.
+                  </p>
+                  <v-btn
+                    color="primary"
+                    variant="outlined"
+                    prepend-icon="mdi-email"
+                    size="large"
+                  >
+                    Contact Us
+                  </v-btn>
+                </v-col>
+              </v-row>
+            </v-container>
+          </section>
         </v-main>
+
+        <!-- Footer -->
+        <v-footer class="bg-grey-darken-4 text-white pa-8">
+          <v-container>
+            <v-row>
+              <v-col cols="12" md="4">
+                <div class="d-flex align-center mb-4">
+                  <v-avatar size="40" class="mr-3">
+                    <v-img
+                      src="https://via.placeholder.com/40/4f46e5/ffffff?text=U"
+                      alt="UlarBox Logo"
+                    />
+                  </v-avatar>
+                  <span class="hero-title text-h5 font-weight-bold"
+                    >UlarBox</span
+                  >
+                </div>
+                <p class="text-body-2 opacity-80 mb-4">
+                  Transform your files into a smart, searchable database.
+                </p>
+                <div>
+                  <v-btn
+                    v-for="social in socials"
+                    :key="social.name"
+                    :icon="social.icon"
+                    variant="text"
+                    size="small"
+                    class="mr-2"
+                  ></v-btn>
+                </div>
+              </v-col>
+              <v-col cols="6" md="2">
+                <h4 class="text-h6 font-weight-bold mb-3">Product</h4>
+                <div v-for="link in productLinks" :key="link" class="mb-2">
+                  <a href="#" class="text-decoration-none text-white opacity-80"
+                    >{{ link }}</a
+                  >
+                </div>
+              </v-col>
+              <v-col cols="6" md="2">
+                <h4 class="text-h6 font-weight-bold mb-3">Support</h4>
+                <div v-for="link in supportLinks" :key="link" class="mb-2">
+                  <a href="#" class="text-decoration-none text-white opacity-80"
+                    >{{ link }}</a
+                  >
+                </div>
+              </v-col>
+              <v-col cols="12" md="4">
+                <h4 class="text-h6 font-weight-bold mb-3">Contact</h4>
+                <div class="d-flex align-center mb-2">
+                  <v-icon class="mr-2">mdi-email</v-icon>
+                  <a
+                    href="mailto:support@ularbox.com"
+                    class="text-decoration-none text-white opacity-80"
+                  >
+                    support@ularbox.com
+                  </a>
+                </div>
+                <div class="d-flex align-center">
+                  <v-icon class="mr-2">mdi-web</v-icon>
+                  <span class="opacity-80">www.ularbox.com</span>
+                </div>
+              </v-col>
+            </v-row>
+            <v-divider class="my-6 opacity-30"></v-divider>
+            <v-row align="center">
+              <v-col cols="12" md="6">
+                <p class="text-body-2 opacity-60 mb-0">
+                  © 2025 Ulario Soft. All rights reserved.
+                </p>
+              </v-col>
+              <v-col cols="12" md="6" class="text-md-right">
+                <a
+                  href="#"
+                  class="text-decoration-none text-white opacity-60 mr-4"
+                  >Privacy Policy</a
+                >
+                <a href="#" class="text-decoration-none text-white opacity-60"
+                  >Terms of Service</a
+                >
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-footer>
       </v-app>
     </div>
 
-    <!-- Vue 3 -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <!-- Vuetify 3 -->
-    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.5.14/dist/vuetify.min.js"></script>
-    <!-- Vuetify 구성 요소 -->
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.8.12/dist/vuetify.min.js"></script>
     <script>
       const { createApp } = Vue;
       const { createVuetify } = Vuetify;
 
-      const app = createApp({});
-      const vuetify = createVuetify();
+      const vuetify = createVuetify({
+        theme: {
+          defaultTheme: "light",
+          themes: {
+            light: {
+              colors: {
+                primary: "#4f46e5",
+                secondary: "#7c3aed",
+              },
+            },
+          },
+        },
+      });
+
+      const app = createApp({
+        data() {
+          return {
+            navItems: [
+              { title: "Features", icon: "mdi-star" },
+              { title: "Download", icon: "mdi-download" },
+              { title: "Support", icon: "mdi-help-circle" },
+            ],
+            keyFeatures: [
+              {
+                icon: "mdi-table-large",
+                title: "Excel-like Interface",
+                description:
+                  "View all your files in a familiar spreadsheet format. Sort, filter, and edit properties with ease.",
+                color: "blue",
+                tags: ["Spreadsheet", "Sorting", "Filtering"],
+              },
+              {
+                icon: "mdi-magnify",
+                title: "Instant Search",
+                description:
+                  "Find files by name, content, tags, or any custom property. Lightning-fast results every time.",
+                color: "green",
+                tags: ["Search", "Content", "Tags"],
+              },
+              {
+                icon: "mdi-tag-multiple",
+                title: "Custom Properties",
+                description:
+                  "Add your own tags, notes, ratings, and metadata. Make your files work the way you think.",
+                color: "orange",
+                tags: ["Tags", "Notes", "Metadata"],
+              },
+              {
+                icon: "mdi-eye",
+                title: "Quick Preview",
+                description:
+                  "Preview images, PDFs, and documents instantly without opening external applications.",
+                color: "purple",
+                tags: ["Preview", "Images", "Documents"],
+              },
+              {
+                icon: "mdi-file-edit",
+                title: "File Operations",
+                description:
+                  "Rename, move, delete, and organize files directly from the interface. Batch operations supported.",
+                color: "red",
+                tags: ["Edit", "Rename", "Batch"],
+              },
+              {
+                icon: "mdi-image-edit",
+                title: "Image Tools",
+                description:
+                  "Basic image editing, resizing, format conversion, and metadata editing built right in.",
+                color: "indigo",
+                tags: ["Images", "Resize", "Convert"],
+              },
+            ],
+            fileTypes: [
+              {
+                name: "Images",
+                icon: "mdi-image",
+                color: "green",
+                description: "JPG, PNG, GIF, SVG",
+              },
+              {
+                name: "Documents",
+                icon: "mdi-file-document",
+                color: "blue",
+                description: "PDF, DOC, TXT",
+              },
+              {
+                name: "Code",
+                icon: "mdi-code-braces",
+                color: "orange",
+                description: "JS, HTML, CSS, PY",
+              },
+              {
+                name: "Markdown",
+                icon: "mdi-language-markdown",
+                color: "purple",
+                description: "MD, README",
+              },
+              {
+                name: "Spreadsheets",
+                icon: "mdi-file-excel",
+                color: "teal",
+                description: "XLS, CSV",
+              },
+              {
+                name: "Archives",
+                icon: "mdi-folder-zip",
+                color: "brown",
+                description: "ZIP, RAR, 7Z",
+              },
+            ],
+            screenshots: [
+              {
+                image:
+                  "https://via.placeholder.com/600x400/f0f9ff/0ea5e9?text=Main+Database+View",
+                title: "Main Database View",
+                description:
+                  "See all your files in one organized table with custom columns and properties",
+              },
+              {
+                image:
+                  "https://via.placeholder.com/600x400/f0fdf4/16a34a?text=Search+%26+Filter",
+                title: "Advanced Search & Filter",
+                description:
+                  "Find exactly what you need with powerful search and filtering capabilities",
+              },
+              {
+                image:
+                  "https://via.placeholder.com/600x400/fef3c7/d97706?text=File+Preview",
+                title: "Quick File Preview",
+                description:
+                  "Preview images, documents, and code files without leaving the interface",
+              },
+              {
+                image:
+                  "https://via.placeholder.com/600x400/fdf2f8/db2777?text=Properties+Editor",
+                title: "Custom Properties Editor",
+                description:
+                  "Add tags, notes, ratings, and custom metadata to organize your way",
+              },
+            ],
+            benefits: [
+              {
+                icon: "mdi-lightning-bolt",
+                title: "Lightning Fast",
+                description:
+                  "Local processing means instant search and file operations",
+              },
+              {
+                icon: "mdi-shield-lock",
+                title: "100% Private",
+                description:
+                  "Your files stay on your computer - no cloud, no sharing",
+              },
+              {
+                icon: "mdi-cog",
+                title: "Highly Customizable",
+                description:
+                  "Adapt the interface and properties to match your workflow",
+              },
+              {
+                icon: "mdi-rocket",
+                title: "Productivity Boost",
+                description:
+                  "Find files 10x faster and stay organized effortlessly",
+              },
+            ],
+            socials: [
+              { name: "Twitter", icon: "mdi-twitter" },
+              { name: "GitHub", icon: "mdi-github" },
+              { name: "LinkedIn", icon: "mdi-linkedin" },
+            ],
+            productLinks: [
+              "Download",
+              "User Guide",
+              "What's New",
+              "System Requirements",
+            ],
+            supportLinks: [
+              "Help Center",
+              "Contact Support",
+              "Feature Request",
+              "Bug Report",
+            ],
+          };
+        },
+      });
 
       app.use(vuetify);
       app.mount("#app");
