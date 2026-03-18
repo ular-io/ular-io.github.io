@@ -17,8 +17,9 @@
   <style>
     :root {
       --v-theme-primary: #1976D2;
-      --text-main: #333333;
-      --text-brand: #222222;
+      --text-main: #424242; /* Matched with App's label color */
+      --text-brand: #212121; /* Matched with App's primary text color */
+      --card-bg: #f8fbff; /* Very light blue for feature cards */
     }
     body {
       font-family: 'Inter', 'Roboto', sans-serif !important;
@@ -53,7 +54,7 @@
     .hero-subtitle {
       font-size: 1.4rem;
       line-height: 1.6;
-      color: #666;
+      color: #616161;
       margin-bottom: 60px;
       max-width: 800px;
       margin-left: auto;
@@ -64,23 +65,25 @@
       margin: 0 auto;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
       border: 1px solid #eee;
     }
     .feature-card {
-      border: 1px solid #eee !important;
+      background-color: var(--card-bg) !important;
+      border: 1px solid #e1f0ff !important; /* Slightly colored border */
       transition: transform 0.2s, box-shadow 0.2s;
       height: 100%;
     }
     .feature-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05) !important;
+      box-shadow: 0 12px 24px rgba(25, 118, 210, 0.1) !important;
+      background-color: #f0f7ff !important;
     }
     .screenshot-container {
-      background: #f8f9fa;
+      background: #ffffff;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #eee;
+      border: 1px solid #e1f0ff;
       aspect-ratio: 16/10;
     }
     .footer {
@@ -91,6 +94,13 @@
     .app-store-badge-nav {
       height: 36px;
       transition: opacity 0.2s;
+    }
+    .app-store-badge-hero {
+      height: 54px;
+      transition: transform 0.2s;
+    }
+    .app-store-badge-hero:hover {
+      transform: scale(1.05);
     }
     .faq-section {
       background: #fafafa;
@@ -154,8 +164,8 @@
               <!-- Feature 1 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="screenshot-container mb-6">
-                    <v-img src="assets/screenshots/feature1.png" cover class="bg-grey-lighten-4"></v-img>
+                  <div class="screenshot-container mb-6 shadow-sm">
+                    <v-img src="assets/screenshots/feature1.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Excel-like Sheet View</h3>
                   <p class="text-body-2">Manage your documents in a clean, organized table. Customize columns to fit your specific needs, just like a spreadsheet.</p>
@@ -164,8 +174,8 @@
               <!-- Feature 2 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="screenshot-container mb-6">
-                    <v-img src="assets/screenshots/feature2.png" cover class="bg-grey-lighten-4"></v-img>
+                  <div class="screenshot-container mb-6 shadow-sm">
+                    <v-img src="assets/screenshots/feature2.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Universal Media Player</h3>
                   <p class="text-body-2">Instantly preview images, videos, audio, PDF, and Markdown files. High-performance streaming for large files without delays.</p>
@@ -174,8 +184,8 @@
               <!-- Feature 3 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="screenshot-container mb-6">
-                    <v-img src="assets/screenshots/feature3.png" cover class="bg-grey-lighten-4"></v-img>
+                  <div class="screenshot-container mb-6 shadow-sm">
+                    <v-img src="assets/screenshots/feature3.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Flexible Metadata Control</h3>
                   <p class="text-body-2">Add custom properties to any file—dates, statuses, amounts, or tags. Your files become structured knowledge, not just random items.</p>
@@ -184,8 +194,8 @@
               <!-- Feature 4 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="screenshot-container mb-6">
-                    <v-img src="assets/screenshots/feature4.png" cover class="bg-grey-lighten-4"></v-img>
+                  <div class="screenshot-container mb-6 shadow-sm">
+                    <v-img src="assets/screenshots/feature4.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Powerful Discovery</h3>
                   <p class="text-body-2">Find anything instantly with complex operators and multi-column sorting. Search across your entire archive at the speed of thought.</p>
