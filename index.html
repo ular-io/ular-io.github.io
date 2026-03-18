@@ -17,8 +17,8 @@
   <style>
     :root {
       --v-theme-primary: #1976D2;
-      --text-main: #333333; /* Soft charcoal black, 10% lighter than pure black */
-      --text-brand: #222222; /* More solid black but still soft */
+      --text-main: #333333;
+      --text-brand: #222222;
     }
     body {
       font-family: 'Inter', 'Roboto', sans-serif !important;
@@ -48,7 +48,7 @@
       line-height: 1.1;
       letter-spacing: -0.03em;
       margin-bottom: 24px;
-      color: var(--text-brand); /* Removed blue, changed to charcoal */
+      color: var(--text-brand);
     }
     .hero-subtitle {
       font-size: 1.4rem;
@@ -64,7 +64,7 @@
       margin: 0 auto;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1); /* Neutral Shadow */
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
       border: 1px solid #eee;
     }
     .feature-card {
@@ -91,13 +91,6 @@
     .app-store-badge-nav {
       height: 36px;
       transition: opacity 0.2s;
-    }
-    .app-store-badge-hero {
-      height: 54px;
-      transition: transform 0.2s;
-    }
-    .app-store-badge-hero:hover {
-      transform: scale(1.05);
     }
     .faq-section {
       background: #fafafa;
@@ -158,6 +151,7 @@
             </div>
             
             <v-row>
+              <!-- Feature 1 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6">
@@ -167,6 +161,7 @@
                   <p class="text-body-2">Manage your documents in a clean, organized table. Customize columns to fit your specific needs, just like a spreadsheet.</p>
                 </v-card>
               </v-col>
+              <!-- Feature 2 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6">
@@ -176,6 +171,7 @@
                   <p class="text-body-2">Instantly preview images, videos, audio, PDF, and Markdown files. High-performance streaming for large files without delays.</p>
                 </v-card>
               </v-col>
+              <!-- Feature 3 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6">
@@ -185,6 +181,7 @@
                   <p class="text-body-2">Add custom properties to any file—dates, statuses, amounts, or tags. Your files become structured knowledge, not just random items.</p>
                 </v-card>
               </v-col>
+              <!-- Feature 4 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6">
@@ -195,16 +192,6 @@
                 </v-card>
               </v-col>
             </v-row>
-          </v-container>
-        </section>
-
-        <!-- Final CTA Section -->
-        <section class="py-16 text-center bg-white">
-          <v-container>
-            <h2 class="text-h4 font-weight-bold mb-8" style="color: var(--text-brand)">Get UlarBox Today</h2>
-            <a href="https://apps.apple.com/app/id-placeholder">
-              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&amp;releaseDate=1310688000&h=0be7a27b876d7240c5780d6f3b063857" alt="Download on the Mac App Store" class="app-store-badge-hero">
-            </a>
           </v-container>
         </section>
 
