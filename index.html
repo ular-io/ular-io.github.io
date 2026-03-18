@@ -17,8 +17,8 @@
   <style>
     :root {
       --v-theme-primary: #1976D2;
-      --text-main: #424242;
-      --text-brand: #212121;
+      --text-brand: #424242; /* Much softer black for headlines */
+      --text-main: #616161;  /* Soft grey for body text */
       --card-bg: #f8fbff;
     }
     body {
@@ -54,7 +54,7 @@
     .hero-subtitle {
       font-size: 1.4rem;
       line-height: 1.6;
-      color: #616161;
+      color: var(--text-main);
       margin-bottom: 32px;
       max-width: 800px;
       margin-left: auto;
@@ -65,7 +65,7 @@
       margin: 0 auto;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05); /* Softer shadow */
       border: 1px solid #eee;
     }
     .privacy-badge-hero {
@@ -137,7 +137,6 @@
               Stop digging through messy folders. Transform your documents, images, and media into structured, searchable data with instant preview.
             </p>
             
-            <!-- Privacy Badge Moved Up -->
             <div class="privacy-badge-hero">
               <v-icon icon="mdi-shield-check" class="mr-2" size="small"></v-icon>
               Local-First Privacy: Your data never leaves your device.
@@ -161,44 +160,48 @@
           <v-container>
             <div class="text-center mb-16">
               <h2 class="text-h4 font-weight-bold mb-4" style="color: var(--text-brand)">Powerful Features for Your Workflow</h2>
-              <p class="text-grey-darken-1">Everything you need to manage your personal archive effectively.</p>
+              <p style="color: var(--text-main)">Everything you need to manage your personal archive effectively.</p>
             </div>
             
             <v-row>
+              <!-- Feature 1 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6 shadow-sm">
                     <v-img src="assets/screenshots/feature1.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Excel-like Sheet View</h3>
-                  <p class="text-body-2">Manage your documents in a clean, organized table. Customize columns to fit your specific needs, just like a spreadsheet.</p>
+                  <p class="text-body-2" style="color: var(--text-main)">Manage your documents in a clean, organized table. Customize columns to fit your specific needs, just like a spreadsheet.</p>
                 </v-card>
               </v-col>
+              <!-- Feature 2 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6 shadow-sm">
                     <v-img src="assets/screenshots/feature2.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Universal Media Player</h3>
-                  <p class="text-body-2">Instantly preview images, videos, audio, PDF, and Markdown files. High-performance streaming for large files without delays.</p>
+                  <p class="text-body-2" style="color: var(--text-main)">Instantly preview images, videos, audio, PDF, and Markdown files. High-performance streaming for large files without delays.</p>
                 </v-card>
               </v-col>
+              <!-- Feature 3 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6 shadow-sm">
                     <v-img src="assets/screenshots/feature3.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Flexible Metadata Control</h3>
-                  <p class="text-body-2">Add custom properties to any file—dates, statuses, amounts, or tags. Your files become structured knowledge, not just random items.</p>
+                  <p class="text-body-2" style="color: var(--text-main)">Add custom properties to any file—dates, statuses, amounts, or tags. Your files become structured knowledge, not just random items.</p>
                 </v-card>
               </v-col>
+              <!-- Feature 4 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6 shadow-sm">
                     <v-img src="assets/screenshots/feature4.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Powerful Discovery</h3>
-                  <p class="text-body-2">Find anything instantly with complex operators and multi-column sorting. Search across your entire archive at the speed of thought.</p>
+                  <p class="text-body-2" style="color: var(--text-main)">Find anything instantly with complex operators and multi-column sorting. Search across your entire archive at the speed of thought.</p>
                 </v-card>
               </v-col>
             </v-row>
@@ -215,26 +218,26 @@
               <v-col cols="12" md="8">
                 <v-expansion-panels variant="accordion" class="elevation-0">
                   <v-expansion-panel elevation="0" rounded="lg" class="mb-2">
-                    <v-expansion-panel-title class="font-weight-bold">Where is my data stored?</v-expansion-panel-title>
-                    <v-expansion-panel-text class="text-body-2">
+                    <v-expansion-panel-title class="font-weight-bold" style="color: var(--text-brand)">Where is my data stored?</v-expansion-panel-title>
+                    <v-expansion-panel-text class="text-body-2" style="color: var(--text-main)">
                       Your data is stored exclusively on your local device in a secure SQLite database. We never upload your files or metadata to any external servers.
                     </v-expansion-panel-text>
                   </v-expansion-panel>
                   <v-expansion-panel elevation="0" rounded="lg" class="mb-2">
-                    <v-expansion-panel-title class="font-weight-bold">Does UlarBox support cloud sync?</v-expansion-panel-title>
-                    <v-expansion-panel-text class="text-body-2">
+                    <v-expansion-panel-title class="font-weight-bold" style="color: var(--text-brand)">Does UlarBox support cloud sync?</v-expansion-panel-title>
+                    <v-expansion-panel-text class="text-body-2" style="color: var(--text-main)">
                       No. UlarBox is built on a "local-first" principle to ensure maximum privacy, speed, and offline availability. You have full control over your own data.
                     </v-expansion-panel-text>
                   </v-expansion-panel>
                   <v-expansion-panel elevation="0" rounded="lg" class="mb-2">
-                    <v-expansion-panel-title class="font-weight-bold">What file types can I manage?</v-expansion-panel-title>
-                    <v-expansion-panel-text class="text-body-2">
+                    <v-expansion-panel-title class="font-weight-bold" style="color: var(--text-brand)">What file types can I manage?</v-expansion-panel-title>
+                    <v-expansion-panel-text class="text-body-2" style="color: var(--text-main)">
                       UlarBox supports a wide range of formats including Images, Videos, Audio, PDF, Markdown, and plain text. If it's a file on your disk, UlarBox can help you organize it.
                     </v-expansion-panel-text>
                   </v-expansion-panel>
                   <v-expansion-panel elevation="0" rounded="lg" class="mb-2">
-                    <v-expansion-panel-title class="font-weight-bold">How do I backup my database?</v-expansion-panel-title>
-                    <v-expansion-panel-text class="text-body-2">
+                    <v-expansion-panel-title class="font-weight-bold" style="color: var(--text-brand)">How do I backup my database?</v-expansion-panel-title>
+                    <v-expansion-panel-text class="text-body-2" style="color: var(--text-main)">
                       You can easily export your entire box configuration and metadata using the built-in Export feature for safe backup and manual migration.
                     </v-expansion-panel-text>
                   </v-expansion-panel>
@@ -254,7 +257,7 @@
                 <v-img src="assets/icons/logo-blink.svg" width="24" height="24" class="flex-grow-0 mr-2"></v-img>
                 <span class="brand-title text-h6">UlarBox</span>
               </div>
-              <p class="text-body-2 text-grey-darken-1 mb-6">
+              <p class="text-body-2 mb-6" style="color: var(--text-main)">
                 Organize your life's essentials. A personal database for documents, images, and media.
               </p>
             </v-col>
@@ -262,13 +265,13 @@
               <h4 class="font-weight-bold mb-4" style="color: var(--text-brand)">Support & Privacy</h4>
               <v-list density="compact" class="bg-transparent pa-0">
                 <v-list-item class="pa-0" href="mailto:hello@ular.io">
-                  <v-list-item-title class="text-body-2">Technical Support</v-list-item-title>
+                  <v-list-item-title class="text-body-2" style="color: var(--text-main)">Technical Support</v-list-item-title>
                 </v-list-item>
                 <v-list-item class="pa-0" href="privacy.html">
-                  <v-list-item-title class="text-body-2">Privacy Policy</v-list-item-title>
+                  <v-list-item-title class="text-body-2" style="color: var(--text-main)">Privacy Policy</v-list-item-title>
                 </v-list-item>
                 <v-list-item class="pa-0" href="terms.html">
-                  <v-list-item-title class="text-body-2">Terms of Service</v-list-item-title>
+                  <v-list-item-title class="text-body-2" style="color: var(--text-main)">Terms of Service</v-list-item-title>
                 </v-list-item>
               </v-list>
             </v-col>
@@ -280,7 +283,7 @@
             </v-col>
           </v-row>
           <v-divider class="my-8"></v-divider>
-          <div class="d-flex flex-column flex-md-row justify-space-between text-caption text-grey-darken-1 ga-4">
+          <div class="d-flex flex-column flex-md-row justify-space-between text-caption ga-4" style="color: var(--text-main)">
             <div>© 2026 UlartioSoft. All rights reserved.</div>
             <div class="d-flex ga-4">
               <span>Personalized archive system for everyone</span>
