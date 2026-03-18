@@ -17,18 +17,19 @@
   <style>
     :root {
       --v-theme-primary: #1976D2;
-      --text-brand: #333333; /* Darker charcoal black */
-      --text-main: #4A4A4A;  /* Deep dark grey, better readability */
-      --card-bg: #f8fbff;
+      --text-brand: #333333;
+      --text-main: #4A4A4A;
+      --card-bg: #ffffff; /* White card for paper-like feel */
     }
     body {
       font-family: 'Inter', 'Roboto', sans-serif !important;
-      background-color: #ffffff;
+      background-color: #fcfcfc; /* Very slightly off-white background to make cards pop */
       color: var(--text-main);
     }
     .v-application {
       font-family: 'Inter', 'Roboto', sans-serif !important;
       color: var(--text-main);
+      background: transparent !important;
     }
     .v-btn, .app-store-badge, a {
       cursor: pointer !important;
@@ -40,7 +41,6 @@
     }
     .hero-section {
       padding: 100px 0 60px 0;
-      background: #ffffff;
       text-align: center;
     }
     .hero-title {
@@ -65,7 +65,7 @@
       margin: 0 auto;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
       border: 1px solid #eee;
     }
     .privacy-badge-hero {
@@ -79,16 +79,19 @@
       font-size: 0.9rem;
       margin-bottom: 48px;
     }
+    /* Paper Card Style */
     .feature-card {
       background-color: var(--card-bg) !important;
-      border: 1px solid #e1f0ff !important;
+      border: none !important; /* Removed border */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important; /* Soft paper shadow */
       height: 100%;
+      border-radius: 24px !important;
     }
     .screenshot-container {
-      background: #ffffff;
+      background: #f8f9fa;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #e1f0ff;
+      border: 1px solid #f0f0f0;
       aspect-ratio: 16/10;
     }
     .footer {
@@ -160,8 +163,8 @@
             <v-row>
               <!-- Feature 1 -->
               <v-col cols="12" md="6">
-                <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="screenshot-container mb-6 shadow-sm">
+                <v-card class="feature-card pa-8" flat>
+                  <div class="screenshot-container mb-6">
                     <v-img src="assets/screenshots/feature1.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Excel-like Sheet View</h3>
@@ -170,8 +173,8 @@
               </v-col>
               <!-- Feature 2 -->
               <v-col cols="12" md="6">
-                <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="screenshot-container mb-6 shadow-sm">
+                <v-card class="feature-card pa-8" flat>
+                  <div class="screenshot-container mb-6">
                     <v-img src="assets/screenshots/feature2.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Universal Media Player</h3>
@@ -180,8 +183,8 @@
               </v-col>
               <!-- Feature 3 -->
               <v-col cols="12" md="6">
-                <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="screenshot-container mb-6 shadow-sm">
+                <v-card class="feature-card pa-8" flat>
+                  <div class="screenshot-container mb-6">
                     <v-img src="assets/screenshots/feature3.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Flexible Metadata Control</h3>
@@ -190,8 +193,8 @@
               </v-col>
               <!-- Feature 4 -->
               <v-col cols="12" md="6">
-                <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="screenshot-container mb-6 shadow-sm">
+                <v-card class="feature-card pa-8" flat>
+                  <div class="screenshot-container mb-6">
                     <v-img src="assets/screenshots/feature4.png" cover class="bg-white"></v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2" style="color: var(--text-brand)">Powerful Discovery</h3>
@@ -254,7 +257,7 @@
               <p class="text-body-2 mb-6" style="color: var(--text-main)">
                 Organize your life's essentials. A personal database for documents, images, and media.
               </p>
-            </col>
+            </v-col>
             <v-col cols="12" md="4">
               <h4 class="font-weight-bold mb-4" style="color: var(--text-brand)">Support & Privacy</h4>
               <v-list density="compact" class="bg-transparent pa-0">
