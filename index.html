@@ -17,8 +17,8 @@
   <style>
     :root {
       --v-theme-primary: #1976D2;
-      --text-main: #444444; /* 10% lighter than black */
-      --text-brand: #1976D2;
+      --text-main: #333333; /* Soft charcoal black, 10% lighter than pure black */
+      --text-brand: #222222; /* More solid black but still soft */
     }
     body {
       font-family: 'Inter', 'Roboto', sans-serif !important;
@@ -48,7 +48,7 @@
       line-height: 1.1;
       letter-spacing: -0.03em;
       margin-bottom: 24px;
-      color: var(--text-brand);
+      color: var(--text-brand); /* Removed blue, changed to charcoal */
     }
     .hero-subtitle {
       font-size: 1.4rem;
@@ -64,8 +64,8 @@
       margin: 0 auto;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 30px 60px rgba(25, 118, 210, 0.15); /* Soft Primary Shadow */
-      border: 1px solid rgba(25, 118, 210, 0.1);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1); /* Neutral Shadow */
+      border: 1px solid #eee;
     }
     .feature-card {
       border: 1px solid #eee !important;
@@ -74,7 +74,7 @@
     }
     .feature-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(25, 118, 210, 0.08) !important;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05) !important;
     }
     .screenshot-container {
       background: #f8f9fa;
@@ -122,7 +122,7 @@
       </v-app-bar>
 
       <v-main>
-        <!-- Hero Section (Stacked Layout) -->
+        <!-- Hero Section -->
         <section class="hero-section">
           <v-container>
             <h1 class="hero-title">Organize Your Digital Life</h1>
@@ -158,7 +158,6 @@
             </div>
             
             <v-row>
-              <!-- Feature 1 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6">
@@ -168,7 +167,6 @@
                   <p class="text-body-2">Manage your documents in a clean, organized table. Customize columns to fit your specific needs, just like a spreadsheet.</p>
                 </v-card>
               </v-col>
-              <!-- Feature 2 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6">
@@ -178,7 +176,6 @@
                   <p class="text-body-2">Instantly preview images, videos, audio, PDF, and Markdown files. High-performance streaming for large files without delays.</p>
                 </v-card>
               </v-col>
-              <!-- Feature 3 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6">
@@ -188,7 +185,6 @@
                   <p class="text-body-2">Add custom properties to any file—dates, statuses, amounts, or tags. Your files become structured knowledge, not just random items.</p>
                 </v-card>
               </v-col>
-              <!-- Feature 4 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6">
