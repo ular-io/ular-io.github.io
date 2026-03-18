@@ -17,8 +17,8 @@
   <style>
     :root {
       --v-theme-primary: #1976D2;
-      --text-brand: #424242; /* Much softer black for headlines */
-      --text-main: #616161;  /* Soft grey for body text */
+      --text-brand: #424242;
+      --text-main: #616161;
       --card-bg: #f8fbff;
     }
     body {
@@ -30,7 +30,7 @@
       font-family: 'Inter', 'Roboto', sans-serif !important;
       color: var(--text-main);
     }
-    .v-btn, .feature-card, .app-store-badge, a {
+    .v-btn, .app-store-badge, a {
       cursor: pointer !important;
     }
     .brand-title {
@@ -65,7 +65,7 @@
       margin: 0 auto;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05); /* Softer shadow */
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
       border: 1px solid #eee;
     }
     .privacy-badge-hero {
@@ -82,13 +82,8 @@
     .feature-card {
       background-color: var(--card-bg) !important;
       border: 1px solid #e1f0ff !important;
-      transition: transform 0.2s, box-shadow 0.2s;
       height: 100%;
-    }
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(25, 118, 210, 0.1) !important;
-      background-color: #f0f7ff !important;
+      /* Removed hover transform and box-shadow */
     }
     .screenshot-container {
       background: #ffffff;
@@ -164,7 +159,6 @@
             </div>
             
             <v-row>
-              <!-- Feature 1 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6 shadow-sm">
@@ -174,7 +168,6 @@
                   <p class="text-body-2" style="color: var(--text-main)">Manage your documents in a clean, organized table. Customize columns to fit your specific needs, just like a spreadsheet.</p>
                 </v-card>
               </v-col>
-              <!-- Feature 2 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6 shadow-sm">
@@ -184,7 +177,6 @@
                   <p class="text-body-2" style="color: var(--text-main)">Instantly preview images, videos, audio, PDF, and Markdown files. High-performance streaming for large files without delays.</p>
                 </v-card>
               </v-col>
-              <!-- Feature 3 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6 shadow-sm">
@@ -194,7 +186,6 @@
                   <p class="text-body-2" style="color: var(--text-main)">Add custom properties to any file—dates, statuses, amounts, or tags. Your files become structured knowledge, not just random items.</p>
                 </v-card>
               </v-col>
-              <!-- Feature 4 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
                   <div class="screenshot-container mb-6 shadow-sm">
