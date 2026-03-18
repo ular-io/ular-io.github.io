@@ -26,6 +26,10 @@
     .v-application {
       font-family: 'Inter', 'Roboto', sans-serif !important;
     }
+    /* Cursor Pointer Fix */
+    .v-btn, .feature-card, .app-store-badge, a {
+      cursor: pointer !important;
+    }
     .hero-section {
       padding: 120px 0 80px 0;
       background: #ffffff;
@@ -47,21 +51,21 @@
     .feature-card {
       border: 1px solid #eee !important;
       transition: transform 0.2s, box-shadow 0.2s;
+      height: 100%;
     }
     .feature-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 24px rgba(0,0,0,0.05) !important;
     }
-    .placeholder-img {
+    .screenshot-container {
       background: #f8f9fa;
       border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      aspect-ratio: 16/10;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #adb5bd;
-      font-weight: 500;
-      aspect-ratio: 16/10;
-      border: 1px dashed #dee2e6;
     }
     .footer {
       background: #fdfdfd;
@@ -70,7 +74,6 @@
     }
     .app-store-badge {
       height: 48px;
-      cursor: pointer;
       transition: opacity 0.2s;
     }
     .app-store-badge:hover {
@@ -119,13 +122,15 @@
                 </div>
               </v-col>
               <v-col cols="12" md="6">
-                <div class="placeholder-img" style="background: linear-gradient(135deg, #1976D2 0%, #0096FF 100%); opacity: 0.1; border: none; box-shadow: 0 40px 80px rgba(0,0,0,0.1);">
-                  <div class="text-center pa-8">
-                    <v-icon icon="mdi-monitor-dashboard" size="80" color="primary" class="mb-4"></v-icon>
-                    <div class="text-h6 text-primary">Main Dashboard Preview</div>
-                    <div class="text-body-2">Table View + Instant Preview</div>
-                  </div>
-                </div>
+                <v-card flat class="screenshot-container shadow-xl">
+                  <v-img src="assets/screenshots/hero.png" cover class="bg-grey-lighten-4">
+                    <template v-slot:placeholder>
+                      <div class="d-flex align-center justify-center fill-height bg-grey-lighten-4">
+                        <v-progress-circular indeterminate color="primary"></v-progress-circular>
+                      </div>
+                    </template>
+                  </v-img>
+                </v-card>
               </v-col>
             </v-row>
           </v-container>
@@ -143,9 +148,12 @@
               <!-- Feature 1 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="placeholder-img mb-6">
-                    <v-icon icon="mdi-table" size="40"></v-icon>
-                    <span class="ml-2">Data Grid View</span>
+                  <div class="screenshot-container mb-6">
+                    <v-img src="assets/screenshots/feature1.png" cover class="bg-grey-lighten-4">
+                      <template v-slot:placeholder>
+                        <v-icon icon="mdi-table" size="40" class="ma-auto" color="grey-lighten-1"></v-icon>
+                      </template>
+                    </v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2">Excel-like Sheet View</h3>
                   <p class="text-body-2 text-grey-darken-1">Manage your documents in a clean, organized table. Customize columns to fit your specific needs, just like a spreadsheet.</p>
@@ -154,9 +162,12 @@
               <!-- Feature 2 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="placeholder-img mb-6">
-                    <v-icon icon="mdi-eye-outline" size="40"></v-icon>
-                    <span class="ml-2">Instant Preview</span>
+                  <div class="screenshot-container mb-6">
+                    <v-img src="assets/screenshots/feature2.png" cover class="bg-grey-lighten-4">
+                      <template v-slot:placeholder>
+                        <v-icon icon="mdi-eye-outline" size="40" class="ma-auto" color="grey-lighten-1"></v-icon>
+                      </template>
+                    </v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2">Universal Media Player</h3>
                   <p class="text-body-2 text-grey-darken-1">Instantly preview images, videos, audio, PDF, and Markdown files. High-performance streaming for large files without delays.</p>
@@ -165,9 +176,12 @@
               <!-- Feature 3 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="placeholder-img mb-6">
-                    <v-icon icon="mdi-tune" size="40"></v-icon>
-                    <span class="ml-2">Dynamic Properties</span>
+                  <div class="screenshot-container mb-6">
+                    <v-img src="assets/screenshots/feature3.png" cover class="bg-grey-lighten-4">
+                      <template v-slot:placeholder>
+                        <v-icon icon="mdi-tune" size="40" class="ma-auto" color="grey-lighten-1"></v-icon>
+                      </template>
+                    </v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2">Flexible Metadata Control</h3>
                   <p class="text-body-2 text-grey-darken-1">Add custom properties to any file—dates, statuses, amounts, or tags. Your files become structured knowledge, not just random items.</p>
@@ -176,9 +190,12 @@
               <!-- Feature 4 -->
               <v-col cols="12" md="6">
                 <v-card class="feature-card pa-6" flat rounded="xl">
-                  <div class="placeholder-img mb-6">
-                    <v-icon icon="mdi-filter-variant" size="40"></v-icon>
-                    <span class="ml-2">Smart Search & Filter</span>
+                  <div class="screenshot-container mb-6">
+                    <v-img src="assets/screenshots/feature4.png" cover class="bg-grey-lighten-4">
+                      <template v-slot:placeholder>
+                        <v-icon icon="mdi-filter-variant" size="40" class="ma-auto" color="grey-lighten-1"></v-icon>
+                      </template>
+                    </v-img>
                   </div>
                   <h3 class="text-h6 font-weight-bold mb-2">Powerful Discovery</h3>
                   <p class="text-body-2 text-grey-darken-1">Find anything instantly with complex operators and multi-column sorting. Search across your entire archive at the speed of thought.</p>
@@ -257,7 +274,9 @@
             </v-col>
             <v-col cols="12" md="4" class="text-md-right">
               <h4 class="font-weight-bold mb-4">Available on</h4>
-              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&amp;releaseDate=1310688000&h=0be7a27b876d7240c5780d6f3b063857" alt="Download on the Mac App Store" class="app-store-badge">
+              <a href="https://apps.apple.com/app/id-placeholder">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&amp;releaseDate=1310688000&h=0be7a27b876d7240c5780d6f3b063857" alt="Download on the Mac App Store" class="app-store-badge">
+              </a>
             </v-col>
           </v-row>
           <v-divider class="my-8"></v-divider>
