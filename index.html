@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://www.ular.io/assets/studio/share.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="UlarioSoft and a sample settings screenshot annotated with UlarMark">
+  <meta property="og:image:alt" content="UlarioSoft and the UlarMark editor for macOS">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="assets/icons/logo-blink.svg">
   <link rel="preload" href="assets/studio/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -42,7 +42,7 @@
       <div class="hero-copy">
         <p class="hero-product"><span class="mark-symbol" aria-hidden="true"></span> UlarMark <span class="hero-platform">for Mac</span></p>
         <h1 id="hero-title">Mark up screenshots. <span>Edit them again later.</span></h1>
-        <p class="hero-description">Add numbered steps and callouts for bug reports or guides. Save an editable UlarMark document so you can update the annotations and export a new PNG later.</p>
+        <p class="hero-description">Add arrows, notes, and numbered steps to a screenshot. Save an editable UlarMark document to make changes later, or export a PNG to share.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="https://apps.apple.com/app/id6780572862">View on the Mac App Store</a>
           <a class="button button-secondary" href="#products">Explore products</a>
@@ -50,37 +50,37 @@
         <p class="hero-meta">macOS 14 or later <span aria-hidden="true">·</span> One-time purchase</p>
       </div>
       <figure class="hero-visual">
-        <fieldset class="demo">
-          <legend class="sr-only">Compare two versions of an annotated sample</legend>
-          <p class="demo-label">Sample walkthrough</p>
-          <input class="sr-only" type="radio" name="example" id="example-draft" checked>
-          <label class="demo-tab" for="example-draft">Draft</label>
-          <input class="sr-only" type="radio" name="example" id="example-revised">
-          <label class="demo-tab" for="example-revised">Revised</label>
-          <div class="demo-example">
-            <img class="demo-image-draft" src="assets/studio/walkthrough-draft.webp" width="1280" height="650"
-                 alt="Two purple markers identify General and the highlighted Screenshot settings row" fetchpriority="high">
-            <img class="demo-image-revised" src="assets/studio/walkthrough-revised.webp" width="1280" height="650"
-                 alt="The first marker now identifies Sharing. The second still marks the highlighted Screenshot settings row.">
-            <p class="demo-note demo-note-draft">Open <strong>General</strong>, then select Screenshot settings.</p>
-            <p class="demo-note demo-note-revised">Open <strong>Sharing</strong>, then select Screenshot settings.</p>
-          </div>
-        </fieldset>
+        <img src="assets/studio/ularmark-1000.webp"
+             srcset="assets/studio/ularmark-1000.webp 1000w, assets/studio/ularmark-1600.webp 1600w"
+             sizes="(max-width: 960px) calc(100vw - 88px), (max-width: 1350px) 51vw, 660px"
+             width="2326" height="1600" fetchpriority="high"
+             alt="UlarMark editor showing numbered markers, arrows, and callouts on a photo">
+        <figcaption>UlarMark editor for macOS</figcaption>
       </figure>
     </section>
 
     <section class="workflow shell" aria-labelledby="workflow-title">
       <div class="workflow-copy">
-        <h2 id="workflow-title">When a step changes, update the screenshot.</h2>
-        <p>Reopen the <code>.ularmark</code> file, move the marker or revise its label, then export a new PNG for your guide.</p>
+        <h2 id="workflow-title">Update the guide when a menu moves.</h2>
+        <p>In this example, Screenshot settings moves from General to Sharing. Select Before or After to see how the numbered instructions change.</p>
+        <p>To edit your own annotations, reopen the <code>.ularmark</code> document and export a fresh PNG when you’re done.</p>
       </div>
-      <figure class="editor-preview">
-        <img src="assets/studio/ularmark-1000.webp"
-             srcset="assets/studio/ularmark-1000.webp 1000w, assets/studio/ularmark-1600.webp 1600w"
-             sizes="(max-width: 960px) calc(100vw - 88px), 600px" width="2326" height="1600"
-             alt="UlarMark editor showing numbered markers, arrows, and callouts on a photo" loading="lazy">
-        <figcaption>UlarMark editor for macOS</figcaption>
-      </figure>
+      <fieldset class="demo">
+        <legend class="sr-only">Compare the guide before and after a menu moves</legend>
+        <p class="demo-label">Example guide</p>
+        <input class="sr-only" type="radio" name="example" id="example-draft" checked>
+        <label class="demo-tab" for="example-draft">Before</label>
+        <input class="sr-only" type="radio" name="example" id="example-revised">
+        <label class="demo-tab" for="example-revised">After</label>
+        <div class="demo-example">
+          <img class="demo-image-draft" src="assets/studio/walkthrough-draft.webp" width="1280" height="650" loading="lazy"
+               alt="The first annotation marks General. The second highlights the Screenshot settings row.">
+          <img class="demo-image-revised" src="assets/studio/walkthrough-revised.webp" width="1280" height="650" loading="lazy"
+               alt="The first annotation now marks Sharing. The second still highlights the Screenshot settings row.">
+          <p class="demo-note demo-note-draft">Open <strong>General</strong>, then select Screenshot settings.</p>
+          <p class="demo-note demo-note-revised">Open <strong>Sharing</strong>, then select Screenshot settings.</p>
+        </div>
+      </fieldset>
     </section>
 
     <section class="products shell" id="products" aria-labelledby="products-title">
